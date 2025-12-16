@@ -1,0 +1,121 @@
+
+type = string-attribute
+name = HISTORY_NOTE
+count = 544
+'[dennis@thinkpad: Tue Dec  9 15:21:11 2025] {AFNI_25.2.09:linux_openmp_64} 3dmerge -gmax Angular_R_Smoothed.nii.gzVALUE+tlrc.BRIK.gz Angular_R_Smoothed.nii.gzVALUE+tlrc.HEAD Cingulate_Mid_R_Smoothed.nii.gzVALUE+tlrc.BRIK.gz Cingulate_Mid_R_Smoothed.nii.gzVALUE+tlrc.HEAD Cingulate_Post_R_Smoothed.nii.gzVALUE+tlrc.BRIK.gz Cingulate_Post_R_Smoothed.nii.gzVALUE+tlrc.HEAD RH_AntHipp_Smoothed.nii.gzVALUE+tlrc.BRIK.gz RH_AntHipp_Smoothed.nii.gzVALUE+tlrc.HEAD RH_PosHipp_Smoothed.nii.gzVALUE+tlrc.BRIK.gz RH_PosHipp_Smoothed.nii.gzVALUE+tlrc.HEAD~
+
+type = string-attribute
+name = TYPESTRING
+count = 15
+'3DIM_HEAD_ANAT~
+
+type = string-attribute
+name = IDCODE_STRING
+count = 27
+'AFN_Nq9Hw5ER3JEVJGFArUO-WA~
+
+type = string-attribute
+name = IDCODE_DATE
+count = 25
+'Tue Dec  9 15:21:11 2025~
+
+type = integer-attribute
+name = SCENE_DATA
+count = 8
+ 2 2 0 -999 -999
+ -999 -999 -999
+
+type = string-attribute
+name = LABEL_1
+count = 4
+'mrg~
+
+type = string-attribute
+name = LABEL_2
+count = 5
+'zyxt~
+
+type = string-attribute
+name = DATASET_NAME
+count = 9
+'zyxt(MG)~
+
+type = integer-attribute
+name = ORIENT_SPECIFIC
+count = 3
+ 1 2 4
+
+type  = float-attribute
+name  = ORIGIN
+count = 3
+             98            134            -72
+
+type  = float-attribute
+name  = DELTA
+count = 3
+             -1             -1              1
+
+type  = float-attribute
+name  = IJK_TO_DICOM
+count = 12
+             -1              0              0             98              0
+             -1              0            134              0              0
+              1            -72
+
+type  = float-attribute
+name  = IJK_TO_DICOM_REAL
+count = 12
+             -1              0              0             98              0
+             -1              0            134              0              0
+              1            -72
+
+type  = float-attribute
+name  = BRICK_STATS
+count = 2
+              0             80
+
+type = integer-attribute
+name = DATASET_RANK
+count = 8
+ 3 1 0 0 0
+ 0 0 0
+
+type = integer-attribute
+name = DATASET_DIMENSIONS
+count = 5
+ 197 233 189 0 0
+
+type = integer-attribute
+name = BRICK_TYPES
+count = 1
+ 3
+
+type  = float-attribute
+name  = BRICK_FLOAT_FACS
+count = 1
+              0
+
+type = string-attribute
+name = BRICK_LABS
+count = 3
+'#0~
+
+type = string-attribute
+name = BRICK_KEYWORDS
+count = 1
+'~
+
+type = string-attribute
+name = TEMPLATE_SPACE
+count = 4
+'MNI~
+
+type = integer-attribute
+name = INT_CMAP
+count = 1
+ 0
+
+type = string-attribute
+name = BYTEORDER_STRING
+count = 10
+'LSB_FIRST~

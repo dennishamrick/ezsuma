@@ -1,0 +1,20 @@
+<ATLAS
+  atlas_name="aparc+aseg"
+  dset_name="aparc+aseg.nii"
+  template_space="ORIG"
+  description="My Atlas"
+  comment="Created from /lscratch/45374765/MNI152_2009/SUMA with:&#x0a;    @MakeLabelTable -replace -atlasize_labeled_dset aparc+aseg.nii" />
+<ATLAS
+  atlas_name="aparc.a2009s+aseg"
+  dset_name="aparc.a2009s+aseg.nii"
+  template_space="ORIG"
+  description="My Atlas"
+  comment="Created from /lscratch/45374765/MNI152_2009/SUMA with:&#x0a;    @MakeLabelTable -replace -atlasize_labeled_dset aparc.a2009s+aseg.nii" />
+<ATLAS
+ atlas_name="aseg"
+ dset_name="aseg.nii"
+ template_space="ORIG"
+ description="My Atlas"
+ comment="Created from /lscratch/45374765/MNI152_2009/SUMA with:
+    @MakeLabelTable -replace -atlasize_labeled_dset aseg.nii"
+></ATLAS>

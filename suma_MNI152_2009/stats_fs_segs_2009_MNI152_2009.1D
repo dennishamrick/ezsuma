@@ -1,0 +1,11 @@
+#     Nvox  FR_BR_MASK  FR_PARC_MASK  FR_ALL_ROI   #  SEG__TYPE    FILE_NAME
+   1909650    1.000000      1.089184    1.229475   #  br_mask      brainmask.nii
+   1753285    0.918118      1.000000    1.128804   #  parc_mask    fs_parc_wb_mask.nii.gz
+   1553224    0.813355      0.885894    1.000000   #  all          aparc.a2009s+aseg_REN_all.nii.gz
+    837823    0.438731      0.477859    0.539409   #  gm           aparc.a2009s+aseg_REN_gm.nii.gz
+    837823    0.438731      0.477859    0.539409   #  gmrois       aparc.a2009s+aseg_REN_gmrois.nii.gz
+    685946    0.359200      0.391235    0.441627   #  wmat         aparc.a2009s+aseg_REN_wmat.nii.gz
+     27894    0.014607      0.015910    0.017959   #  vent         aparc.a2009s+aseg_REN_vent.nii.gz
+      1328    0.000695      0.000757    0.000855   #  csf          aparc.a2009s+aseg_REN_csf.nii.gz
+       233    0.000122      0.000133    0.000150   #  othr         aparc.a2009s+aseg_REN_othr.nii.gz
+         0    0.000000      0.000000    0.000000   #  unkn         aparc.a2009s+aseg_REN_unkn.nii.gz

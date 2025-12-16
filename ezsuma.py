@@ -15,6 +15,7 @@ import subprocess
 from datetime import datetime
 
 # template brain directory location
+# ideally, include in package
 AFNI_DIR = os.path.expanduser("~") + "/.afni/data/suma_MNI152_2009/"
 
 
@@ -33,13 +34,16 @@ def make_temporary_directory(directory_name):
     return directory_name
 
 
+# main fuction for processing
 def process_file(USER_SUPPLIED_DATA):
     directory = os.path.dirname(USER_SUPPLIED_DATA) + "/"
+    csv_file_name = os.path.splitext(USER_SUPPLIED_DATA)[0]
     # Temporary files dir
     date_time = datetime.now().strftime("%Y%m%d_%H%M%S")
-    TEMP_FILES_DIR = directory + "EZSUMA_OUTPUT_" + date_time + "/"
+    TEMP_FILES_DIR = directory + csv_file_name + "_EZSUMA_OUTPUT_" + date_time + "/"
     os.chdir(directory)
     # Load in user data
+    csv_file_name = os.path.splitext(USER_SUPPLIED_DATA)[0]
     data_for_SUMA = pl.read_csv(USER_SUPPLIED_DATA).drop_nans().drop_nulls()
     make_temporary_directory(TEMP_FILES_DIR)
     os.chdir(TEMP_FILES_DIR)
@@ -127,9 +131,10 @@ def process_file(USER_SUPPLIED_DATA):
     # cleaning up
     # interim_files
     for dset in glob.glob("*.dset"):
-        shutil.move(dset, "../" + dset)
+        shutil.move(dset, TEMP_FILES_DIR + dset)
     # go back to the original file directory
-    os.chdir(directory)
+    os.chdir(TEMP_FILES_DIR)
+    # open_SUMA()
     interim_files = make_temporary_directory(TEMP_FILES_DIR + "interim_files/")
     # moving afni region and original merge folder
     for brik in glob.glob(TEMP_FILES_DIR + "*.BRIK.gz"):
@@ -185,15 +190,11 @@ def map_electrodes(USER_SUPPLIED_DATA):
     return fname
 
 
-def open_SUMA():
-    subprocess.run(
-        [
-            "suma",
-            "-spec",
-            AFNI_DIR + "MNI152_2009_both.spec",
-            # "-sv",
-            # "~/Documents/LegaLab/atlases/MNI152_2009_template.nii.gz",
-        ]
+def open_SUMA(dataset=""):
+    subprocess.Popen(
+        ["suma", "-spec", AFNI_DIR + "MNI152_2009_both.spec", "-input", dataset],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.STDOUT,
     )
 
 
