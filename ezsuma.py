@@ -37,13 +37,12 @@ def make_temporary_directory(directory_name):
 # main fuction for processing
 def process_file(USER_SUPPLIED_DATA):
     directory = os.path.dirname(USER_SUPPLIED_DATA) + "/"
-    csv_file_name = os.path.splitext(USER_SUPPLIED_DATA)[0]
+    csv_file_name = os.path.splitext(os.path.basename(USER_SUPPLIED_DATA))[0]
     # Temporary files dir
     date_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     TEMP_FILES_DIR = directory + csv_file_name + "_EZSUMA_OUTPUT_" + date_time + "/"
     os.chdir(directory)
     # Load in user data
-    csv_file_name = os.path.splitext(USER_SUPPLIED_DATA)[0]
     data_for_SUMA = pl.read_csv(USER_SUPPLIED_DATA).drop_nans().drop_nulls()
     make_temporary_directory(TEMP_FILES_DIR)
     os.chdir(TEMP_FILES_DIR)
