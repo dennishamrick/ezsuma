@@ -229,10 +229,18 @@ class FileOpenApp(App[None]):
         yield self.logo
         yield Center(Label("I want to..."))
         yield Center(
-            Button("map electrodes to BN regions", id="electrodes", variant="primary")
+            Button(
+                "map electrodes to Brainnetome Atlas regions",
+                id="electrodes",
+                variant="primary",
+            )
         )
         yield Center(
-            Button("map values to brain regions", id="color_planes", variant="warning")
+            Button(
+                "map values to Brainnetome Atlas regions",
+                id="color_planes",
+                variant="warning",
+            )
         )
         yield Center(Button("open SUMA", id="open_SUMA", variant="primary"))
         yield Center(Button("quit", id="quit", variant="warning"))
