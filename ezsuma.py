@@ -58,9 +58,10 @@ def process_file(USER_SUPPLIED_DATA):
                 "-a",
                 "Brainnetome_1.0:" + i,
                 "-expression",
-                str(statistic_values[count]) + "*a",
+                str(statistic_values[count]) + "* a",
                 "-prefix",
                 i,
+                "-float",
             ],
             capture_output=True,
             text=True,
@@ -69,7 +70,9 @@ def process_file(USER_SUPPLIED_DATA):
     regions = os.listdir()
     # merge the regions together, output = mrg+tlrc afni files
     merge_results = subprocess.run(
-        ["3dmerge", "-gmax"] + regions, capture_output=True, text=True
+        ["3dmerge", "-datum", "float", "-gorder"] + regions,
+        capture_output=True,
+        text=True,
     )
     # grow the regions modally
     grow_results = subprocess.run(
@@ -78,7 +81,7 @@ def process_file(USER_SUPPLIED_DATA):
             "-input",
             "mrg+tlrc.BRIK.gz",
             "-niters",
-            "4",
+            "2",
             "-prefix",
             "Modal_Grow",
         ],
